@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="risk" nsURI="ecore://nasdanika.org/models/risk" nsPrefix="org.nasdanika.models.risk">
-
-  <!-- ==================== Enumerations ==================== -->
-
   <eClassifiers xsi:type="ecore:EEnum" name="DataClassification">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Classification of data handled by a product or component, determining the sensitivity level and applicable controls."/>
     </eAnnotations>
-    <eLiterals name="Public" value="0">
+    <eLiterals name="Public">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Publicly available data with no restrictions."/>
       </eAnnotations>
@@ -34,12 +31,11 @@
       </eAnnotations>
     </eLiterals>
   </eClassifiers>
-
   <eClassifiers xsi:type="ecore:EEnum" name="TreatmentStrategy">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Strategy for treating (responding to) an identified risk."/>
     </eAnnotations>
-    <eLiterals name="Accept" value="0">
+    <eLiterals name="Accept">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Accept the risk without additional controls; typically used for low-impact or low-likelihood risks."/>
       </eAnnotations>
@@ -60,33 +56,30 @@
       </eAnnotations>
     </eLiterals>
   </eClassifiers>
-
   <eClassifiers xsi:type="ecore:EEnum" name="TreatmentStatus">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Current status of a risk treatment plan."/>
     </eAnnotations>
-    <eLiterals name="Planned" value="0"/>
+    <eLiterals name="Planned"/>
     <eLiterals name="InProgress" value="1"/>
     <eLiterals name="Completed" value="2"/>
     <eLiterals name="Overdue" value="3"/>
     <eLiterals name="Cancelled" value="4"/>
   </eClassifiers>
-
   <eClassifiers xsi:type="ecore:EEnum" name="ActionStatus">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Current status of a treatment action."/>
     </eAnnotations>
-    <eLiterals name="Pending" value="0"/>
+    <eLiterals name="Pending"/>
     <eLiterals name="InProgress" value="1"/>
     <eLiterals name="Done" value="2"/>
     <eLiterals name="Cancelled" value="3"/>
   </eClassifiers>
-
   <eClassifiers xsi:type="ecore:EEnum" name="AssessmentStatus">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Current lifecycle status of a risk assessment."/>
     </eAnnotations>
-    <eLiterals name="Draft" value="0">
+    <eLiterals name="Draft">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Assessment is being authored; not yet submitted for review."/>
       </eAnnotations>
@@ -112,23 +105,21 @@
       </eAnnotations>
     </eLiterals>
   </eClassifiers>
-
   <eClassifiers xsi:type="ecore:EEnum" name="RiskStatus">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Lifecycle status of an identified risk."/>
     </eAnnotations>
-    <eLiterals name="Open" value="0"/>
+    <eLiterals name="Open"/>
     <eLiterals name="Accepted" value="1"/>
     <eLiterals name="Mitigated" value="2"/>
     <eLiterals name="Transferred" value="3"/>
     <eLiterals name="Closed" value="4"/>
   </eClassifiers>
-
   <eClassifiers xsi:type="ecore:EEnum" name="ControlType">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="The nature of a risk control."/>
     </eAnnotations>
-    <eLiterals name="Preventive" value="0">
+    <eLiterals name="Preventive">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Prevents a risk event from occurring (e.g., access controls, encryption)."/>
       </eAnnotations>
@@ -149,22 +140,20 @@
       </eAnnotations>
     </eLiterals>
   </eClassifiers>
-
   <eClassifiers xsi:type="ecore:EEnum" name="ControlEffectiveness">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Assessed effectiveness of a control in reducing risk."/>
     </eAnnotations>
-    <eLiterals name="High" value="0"/>
+    <eLiterals name="High"/>
     <eLiterals name="Medium" value="1"/>
     <eLiterals name="Low" value="2"/>
     <eLiterals name="NotAssessed" value="3"/>
   </eClassifiers>
-
   <eClassifiers xsi:type="ecore:EEnum" name="FindingType">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="The type of a finding identified during a risk assessment."/>
     </eAnnotations>
-    <eLiterals name="Gap" value="0">
+    <eLiterals name="Gap">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="A missing control or capability required by policy or regulation."/>
       </eAnnotations>
@@ -185,22 +174,20 @@
       </eAnnotations>
     </eLiterals>
   </eClassifiers>
-
   <eClassifiers xsi:type="ecore:EEnum" name="FindingStatus">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Lifecycle status of a finding."/>
     </eAnnotations>
-    <eLiterals name="Open" value="0"/>
+    <eLiterals name="Open"/>
     <eLiterals name="Resolved" value="1"/>
     <eLiterals name="Accepted" value="2"/>
     <eLiterals name="Deferred" value="3"/>
   </eClassifiers>
-
   <eClassifiers xsi:type="ecore:EEnum" name="QuestionType">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Type of a question in a risk assessment questionnaire."/>
     </eAnnotations>
-    <eLiterals name="YesNo" value="0"/>
+    <eLiterals name="YesNo"/>
     <eLiterals name="MultipleChoice" value="1">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Multiple options may be selected."/>
@@ -232,12 +219,11 @@
       </eAnnotations>
     </eLiterals>
   </eClassifiers>
-
   <eClassifiers xsi:type="ecore:EEnum" name="ProductComponentType">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Type of a product component representing an independently assessable unit (RAU) below the product level."/>
     </eAnnotations>
-    <eLiterals name="Repository" value="0">
+    <eLiterals name="Repository">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="A source code repository (e.g., a GitHub/GitLab repo)."/>
       </eAnnotations>
@@ -283,12 +269,11 @@
       </eAnnotations>
     </eLiterals>
   </eClassifiers>
-
   <eClassifiers xsi:type="ecore:EEnum" name="ChangeEventType">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="The type of change event that may trigger a risk re-assessment."/>
     </eAnnotations>
-    <eLiterals name="NewFeature" value="0">
+    <eLiterals name="NewFeature">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="A new feature or capability is being added to the product."/>
       </eAnnotations>
@@ -344,12 +329,11 @@
       </eAnnotations>
     </eLiterals>
   </eClassifiers>
-
   <eClassifiers xsi:type="ecore:EEnum" name="ArtifactType">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Type of artifact in a data source system."/>
     </eAnnotations>
-    <eLiterals name="Issue" value="0">
+    <eLiterals name="Issue">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="An issue, ticket, or work item (e.g., Jira issue)."/>
       </eAnnotations>
@@ -385,9 +369,6 @@
       </eAnnotations>
     </eLiterals>
   </eClassifiers>
-
-  <!-- ==================== Core named element base ==================== -->
-
   <eClassifiers xsi:type="ecore:EClass" name="RiskModelElement" abstract="true">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Abstract base class for all elements in the risk model. Provides common identification and documentation attributes."/>
@@ -413,9 +394,6 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-
-  <!-- ==================== Risk Ontology / Catalog ==================== -->
-
   <eClassifiers xsi:type="ecore:EClass" name="RiskLevel" eSuperTypes="#//RiskModelElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A defined risk level or rating (e.g., Critical, High, Medium, Low). Risk levels are ordered by their score value and used for likelihood, impact, and consolidated ratings."/>
@@ -431,13 +409,11 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-
   <eClassifiers xsi:type="ecore:EClass" name="ControlCategory" eSuperTypes="#//RiskModelElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A category of risk controls (e.g., Technical, Administrative, Physical, Legal)."/>
     </eAnnotations>
   </eClassifiers>
-
   <eClassifiers xsi:type="ecore:EClass" name="RiskCategory" eSuperTypes="#//RiskModelElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A category of risks in the risk taxonomy (e.g., Cybersecurity, Operational, Compliance, Financial, Reputational). Risk categories can be nested to form a hierarchy."/>
@@ -455,7 +431,6 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-
   <eClassifiers xsi:type="ecore:EClass" name="Risk" eSuperTypes="#//RiskModelElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A defined type of risk in the risk catalog/ontology. Represents a potential negative outcome or threat that can be assessed against Risk Assessable Units."/>
@@ -485,9 +460,6 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-
-  <!-- ==================== Controls ==================== -->
-
   <eClassifiers xsi:type="ecore:EClass" name="Control" eSuperTypes="#//RiskModelElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A risk control measure that reduces the likelihood or impact of a risk. Controls can be shared across multiple identified risks."/>
@@ -528,9 +500,6 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-
-  <!-- ==================== Questionnaire ==================== -->
-
   <eClassifiers xsi:type="ecore:EClass" name="QuestionOption" eSuperTypes="#//RiskModelElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A selectable option for a choice-type question in a risk assessment questionnaire."/>
@@ -551,7 +520,6 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-
   <eClassifiers xsi:type="ecore:EClass" name="Question" eSuperTypes="#//RiskModelElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A question in a risk assessment questionnaire. Questions can address topics such as cloud usage, AI adoption, data classification, third-party dependencies, and security controls."/>
@@ -593,7 +561,6 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-
   <eClassifiers xsi:type="ecore:EClass" name="Questionnaire" eSuperTypes="#//RiskModelElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A structured set of questions used to gather information for a risk assessment. Questionnaires may contain hundreds of questions covering topics like public cloud use, AI adoption, data classification, third-party dependencies, and security controls. Different questionnaires may apply to different types of products or change triggers."/>
@@ -615,7 +582,6 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-
   <eClassifiers xsi:type="ecore:EClass" name="Answer" eSuperTypes="#//RiskModelElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="An answer to a single question within a questionnaire response."/>
@@ -642,7 +608,6 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-
   <eClassifiers xsi:type="ecore:EClass" name="QuestionnaireResponse" eSuperTypes="#//RiskModelElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A completed response to a questionnaire for a specific Risk Assessable Unit. The response is linked back to the questionnaire used and contains answers to all applicable questions."/>
@@ -680,9 +645,6 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-
-  <!-- ==================== Risk Assessment ==================== -->
-
   <eClassifiers xsi:type="ecore:EClass" name="ScoreComponent" eSuperTypes="#//RiskModelElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A single scored dimension within a risk assessment, such as inherent risk, control effectiveness, or a specific questionnaire category score. Multiple score components are aggregated into a composite score."/>
@@ -713,7 +675,6 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-
   <eClassifiers xsi:type="ecore:EClass" name="Finding" eSuperTypes="#//RiskModelElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="An observation, gap, issue, or recommendation identified during a risk assessment."/>
@@ -749,7 +710,6 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-
   <eClassifiers xsi:type="ecore:EClass" name="TreatmentAction" eSuperTypes="#//RiskModelElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A specific actionable step within a risk treatment plan."/>
@@ -775,7 +735,6 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-
   <eClassifiers xsi:type="ecore:EClass" name="RiskTreatment" eSuperTypes="#//RiskModelElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A plan for treating (responding to) an identified risk, including the chosen strategy and specific actions."/>
@@ -807,7 +766,6 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-
   <eClassifiers xsi:type="ecore:EClass" name="IdentifiedRisk" eSuperTypes="#//RiskModelElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A specific risk identified for a Risk Assessable Unit, including its assessed likelihood, impact, and treatment information."/>
@@ -881,7 +839,6 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-
   <eClassifiers xsi:type="ecore:EClass" name="RiskAssessment" eSuperTypes="#//RiskModelElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A risk assessment performed on a Risk Assessable Unit at a specific point in time. Assessments are triggered initially, periodically (scheduled review), or when a change is detected. The assessment captures individual scores, a consolidated rating, and findings."/>
@@ -943,16 +900,13 @@
         <details key="documentation" value="Findings (gaps, issues, recommendations) identified during this assessment."/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="questionnaireResponses" upperBound="-1"
-        eType="#//QuestionnaireResponse">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="questionnaireResponses"
+        upperBound="-1" eType="#//QuestionnaireResponse">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Questionnaire responses used as input for this assessment."/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-
-  <!-- ==================== Data Sources and Artifacts ==================== -->
-
   <eClassifiers xsi:type="ecore:EClass" name="KeyValuePair">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A generic key-value pair used for flexible metadata on artifacts."/>
@@ -968,7 +922,6 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-
   <eClassifiers xsi:type="ecore:EClass" name="Artifact" eSuperTypes="#//RiskModelElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="An artifact in an external data source system (e.g., a Jira Epic, a GitHub repository, a CI/CD pipeline) that is relevant to risk assessment. Some artifacts are Risk Assessable Units (RAUs) themselves."/>
@@ -1000,7 +953,6 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-
   <eClassifiers xsi:type="ecore:EClass" name="DataSource" eSuperTypes="#//RiskModelElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A source system from which risk-relevant data is collected (e.g., Jira, GitHub, GitLab, SonarQube, Veracode, ServiceNow, AWS Security Hub). Data sources are polled or receive events to detect changes that may trigger risk re-assessments."/>
@@ -1022,7 +974,6 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-
   <eClassifiers xsi:type="ecore:EClass" name="ChangeEvent" eSuperTypes="#//RiskModelElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="An event representing a change detected in a data source that may require risk re-assessment. Change events are the mechanism by which the risk model is kept current with the state of the products being assessed."/>
@@ -1053,9 +1004,6 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-
-  <!-- ==================== Risk Assessable Units ==================== -->
-
   <eClassifiers xsi:type="ecore:EClass" name="RiskAssessableUnit" abstract="true"
       eSuperTypes="#//RiskModelElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1095,8 +1043,8 @@
         <details key="documentation" value="Questionnaires applicable to this RAU."/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="questionnaireResponses" upperBound="-1"
-        eType="#//QuestionnaireResponse" containment="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="questionnaireResponses"
+        upperBound="-1" eType="#//QuestionnaireResponse" containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Completed questionnaire responses for this RAU."/>
       </eAnnotations>
@@ -1125,7 +1073,6 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-
   <eClassifiers xsi:type="ecore:EClass" name="Product" eSuperTypes="#//RiskAssessableUnit">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A bank digital product or application being developed or maintained. This is the top-level Risk Assessable Unit. Product management creates the initial entry for the product in Jira or another system when development begins. The product is then assessed and re-assessed over its lifecycle."/>
@@ -1183,7 +1130,6 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-
   <eClassifiers xsi:type="ecore:EClass" name="ProductComponent" eSuperTypes="#//RiskAssessableUnit">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A component of a bank digital product that is itself a Risk Assessable Unit (RAU). Examples include Jira Epics (but not stories or sub-tasks), code repositories, deployable units (microservices, containers), databases, and APIs. Smaller granularity items (individual source files, stories, sub-tasks) are not RAUs."/>
@@ -1204,9 +1150,6 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-
-  <!-- ==================== Risk Register / Namespace ==================== -->
-
   <eClassifiers xsi:type="ecore:EClass" name="RiskRegister" eSuperTypes="#//RiskModelElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A risk register that aggregates identified risks across multiple Risk Assessable Units. The register provides a consolidated view of the risk landscape and is used for reporting to management and risk committees."/>
@@ -1223,7 +1166,6 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-
   <eClassifiers xsi:type="ecore:EClass" name="RiskRegisterEntry" eSuperTypes="#//RiskModelElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="An entry in the risk register linking an identified risk to its RAU and current assessment."/>
@@ -1241,7 +1183,6 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-
   <eClassifiers xsi:type="ecore:EClass" name="RiskNamespace" eSuperTypes="#//RiskModelElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Root container for the risk management model. Holds the risk taxonomy (categories, risk types), risk levels, control categories, questionnaires, data sources, and products. Serves as the shared ontology/dictionary for the organization's risk management terminology. Also contains the products subject to risk assessment and the data sources from which risk-relevant data is collected."/>
@@ -1289,5 +1230,4 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-
 </ecore:EPackage>

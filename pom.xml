@@ -1,14 +1,13 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.nasdanika.models.risk</groupId>
 	<artifactId>parent</artifactId>
-	<version>2025.12.0</version>
+	<version>2026.2.0</version>
 	<packaging>pom</packaging>
-	<name>Risk management model and agentic risk assessment</name>
-	<description>Ecore model of the risk management/assessment problem domain as applied to digital product development in banks. Provides a shared ontology/dictionary of risk terminology and supports agentic risk assessments.</description>
-	<url>https://github.com/Nasdanika-Models/risk</url>
+	<name>Risk model, processors, doc generator</name>
+	<description>Risk model for risk assessments</description>
+	<url>https://travel.models.nasdanika.org/</url>
 
 	<licenses>
 		<license>
@@ -23,20 +22,15 @@
 	</scm>
 
 	<properties>
-		<core.version>2025.12.0</core.version>
+		<core.version>2026.2.0</core.version>
+		<html.version>2026.2.0</html.version>
+		<models.ecore.version>2026.2.0</models.ecore.version>
 		<jacoco.version>0.8.14</jacoco.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.javadoc.failOnError>false</maven.javadoc.failOnError>
-	</properties>
+	</properties>	
 
 	<build>
-	    <extensions>
-	      <extension>
-	        <groupId>org.apache.maven.wagon</groupId>
-	         <artifactId>wagon-ssh</artifactId>
-	         <version>3.5.3</version>
-	      </extension>
-	    </extensions>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -64,15 +58,16 @@
 					</execution>
 				</executions>
 			</plugin>
-	        <plugin>
-	            <groupId>org.apache.maven.plugins</groupId>
-	            <artifactId>maven-surefire-plugin</artifactId>
-	            <version>3.5.4</version>
-	        </plugin>
+		        <plugin>
+		            <groupId>org.apache.maven.plugins</groupId>
+		            <artifactId>maven-surefire-plugin</artifactId>
+		            <version>3.5.4</version>
+		        </plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
 				<version>3.12.0</version>
+			
 				<executions>
 					<execution>
 						<id>aggregate</id>
@@ -83,11 +78,24 @@
 							<failOnError>false</failOnError>
 							<additionalOptions>-Xdoclint:none</additionalOptions>
 							<additionalOptions><![CDATA[--allow-script-in-comments]]></additionalOptions>
-							<linksource>true</linksource>
-							<useStandardDocletOptions>true</useStandardDocletOptions>
+							<linksource>true</linksource>	
+			        			<useStandardDocletOptions>true</useStandardDocletOptions>
 							<links>
 								<link>https://download.eclipse.org/modeling/emf/emf/javadoc/2.11/</link>
+								<link>https://picocli.info/apidocs/</link>
 							</links>
+							<header>
+								<![CDATA[
+								      <script async src="https://www.googletagmanager.com/gtag/js?id=G-9BRJVLK8CC"></script>
+								      <script>
+								        window.dataLayer = window.dataLayer || [];
+								        function gtag(){dataLayer.push(arguments);}
+								        gtag('js', new Date());
+      
+								        gtag('config', 'G-9BRJVLK8CC');
+								      </script>    
+								]]>
+							</header>
 						</configuration>
 					</execution>
 					<execution>
@@ -99,11 +107,24 @@
 							<failOnError>false</failOnError>
 							<additionalOptions>-Xdoclint:none</additionalOptions>
 							<additionalOptions><![CDATA[--allow-script-in-comments]]></additionalOptions>
-							<linksource>true</linksource>
-							<useStandardDocletOptions>true</useStandardDocletOptions>
+							<linksource>true</linksource>	
+			        			<useStandardDocletOptions>true</useStandardDocletOptions>
 							<links>
 								<link>https://download.eclipse.org/modeling/emf/emf/javadoc/2.11/</link>
+								<link>https://picocli.info/apidocs/</link>
 							</links>
+							<header>
+								<![CDATA[
+								      <script async src="https://www.googletagmanager.com/gtag/js?id=G-9BRJVLK8CC"></script>
+								      <script>
+								        window.dataLayer = window.dataLayer || [];
+								        function gtag(){dataLayer.push(arguments);}
+								        gtag('js', new Date());
+      
+								        gtag('config', 'G-9BRJVLK8CC');
+								      </script>    
+								]]>
+							</header>
 						</configuration>
 					</execution>
 				</executions>
@@ -132,22 +153,23 @@
 		<dependency>
 		    <groupId>org.junit.jupiter</groupId>
 		    <artifactId>junit-jupiter-api</artifactId>
-		    <version>5.11.4</version>
+		    <version>6.0.1</version>
 		    <scope>test</scope>
-		</dependency>
+		</dependency>		
 		<dependency>
 		    <groupId>org.junit.jupiter</groupId>
 		    <artifactId>junit-jupiter-engine</artifactId>
-		    <version>5.11.4</version>
+		    <version>6.0.1</version>
 		    <scope>test</scope>
-		</dependency>
+		</dependency>		
 	</dependencies>
 
 	<modules>
 		<module>model</module>
+		<module>ecore</module>
 	</modules>
 
-	<profiles>
+	 <profiles>
 		<profile>
 			<id>central</id>
 			<build>
@@ -165,8 +187,8 @@
 								</goals>
 							</execution>
 						</executions>
-					</plugin>
-					<plugin>
+					</plugin>	
+					<plugin>					
 						<groupId>org.sonatype.central</groupId>
 						<artifactId>central-publishing-maven-plugin</artifactId>
 						<version>0.9.0</version>
@@ -180,5 +202,5 @@
 			</build>
 		</profile>
 	</profiles>
-
 </project>
+

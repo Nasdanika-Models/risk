@@ -1,6 +1,6 @@
 # Risk Management Model
 
-An [Ecore](https://eclipse.dev/modeling/emf/) model of the risk management/assessment problem domain ([Wikipedia: Risk assessment](https://en.wikipedia.org/wiki/Risk_assessment)) as applied to digital product development in banks.
+An [Ecore](https://eclipse.dev/modeling/emf/) model of the risk management/assessment problem domain ([Wikipedia: Risk assessment](https://en.wikipedia.org/wiki/Risk_assessment)) as applied to digital product development.
 
 ## Purpose
 
