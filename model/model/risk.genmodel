@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.nasdanika.models.risk/src/main/java"
+    creationIcons="false" editorDirectory="" modelPluginID="org.nasdanika.models.risk"
+    modelName="Risk" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" bundleManifest="false" featureDelegation="Dynamic"
+    complianceLevel="17.0" suppressGenModelAnnotations="false" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>risk.ecore</foreignModel>
+  <genPackages prefix="Risk" basePackage="org.nasdanika.models" disposableProviderFactory="true"
+      ecorePackage="risk.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="risk.ecore#//DataClassification">
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//DataClassification/Public"/>
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//DataClassification/Internal"/>
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//DataClassification/Confidential"/>
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//DataClassification/Restricted"/>
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//DataClassification/TopSecret"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="risk.ecore#//TreatmentStrategy">
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//TreatmentStrategy/Accept"/>
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//TreatmentStrategy/Avoid"/>
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//TreatmentStrategy/Mitigate"/>
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//TreatmentStrategy/Transfer"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="risk.ecore#//TreatmentStatus">
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//TreatmentStatus/Planned"/>
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//TreatmentStatus/InProgress"/>
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//TreatmentStatus/Completed"/>
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//TreatmentStatus/Overdue"/>
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//TreatmentStatus/Cancelled"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="risk.ecore#//ActionStatus">
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//ActionStatus/Pending"/>
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//ActionStatus/InProgress"/>
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//ActionStatus/Done"/>
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//ActionStatus/Cancelled"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="risk.ecore#//AssessmentStatus">
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//AssessmentStatus/Draft"/>
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//AssessmentStatus/UnderReview"/>
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//AssessmentStatus/Approved"/>
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//AssessmentStatus/Rejected"/>
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//AssessmentStatus/Outdated"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="risk.ecore#//RiskStatus">
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//RiskStatus/Open"/>
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//RiskStatus/Accepted"/>
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//RiskStatus/Mitigated"/>
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//RiskStatus/Transferred"/>
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//RiskStatus/Closed"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="risk.ecore#//ControlType">
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//ControlType/Preventive"/>
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//ControlType/Detective"/>
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//ControlType/Corrective"/>
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//ControlType/Compensating"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="risk.ecore#//ControlEffectiveness">
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//ControlEffectiveness/High"/>
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//ControlEffectiveness/Medium"/>
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//ControlEffectiveness/Low"/>
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//ControlEffectiveness/NotAssessed"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="risk.ecore#//FindingType">
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//FindingType/Gap"/>
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//FindingType/Issue"/>
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//FindingType/Observation"/>
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//FindingType/Recommendation"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="risk.ecore#//FindingStatus">
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//FindingStatus/Open"/>
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//FindingStatus/Resolved"/>
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//FindingStatus/Accepted"/>
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//FindingStatus/Deferred"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="risk.ecore#//QuestionType">
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//QuestionType/YesNo"/>
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//QuestionType/MultipleChoice"/>
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//QuestionType/SingleChoice"/>
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//QuestionType/Text"/>
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//QuestionType/Rating"/>
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//QuestionType/Scale"/>
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//QuestionType/Date"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="risk.ecore#//ProductComponentType">
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//ProductComponentType/Repository"/>
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//ProductComponentType/DeployableUnit"/>
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//ProductComponentType/Epic"/>
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//ProductComponentType/Database"/>
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//ProductComponentType/API"/>
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//ProductComponentType/ThirdPartyService"/>
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//ProductComponentType/CloudService"/>
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//ProductComponentType/AIModel"/>
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//ProductComponentType/Integration"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="risk.ecore#//ChangeEventType">
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//ChangeEventType/NewFeature"/>
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//ChangeEventType/Enhancement"/>
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//ChangeEventType/Deployment"/>
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//ChangeEventType/SecurityVulnerability"/>
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//ChangeEventType/PolicyChange"/>
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//ChangeEventType/RegulationChange"/>
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//ChangeEventType/ThreatIntelligence"/>
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//ChangeEventType/IncidentReport"/>
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//ChangeEventType/VendorChange"/>
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//ChangeEventType/ArchitectureChange"/>
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//ChangeEventType/ScheduledReview"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="risk.ecore#//ArtifactType">
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//ArtifactType/Issue"/>
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//ArtifactType/Epic"/>
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//ArtifactType/Repository"/>
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//ArtifactType/Pipeline"/>
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//ArtifactType/Deployment"/>
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//ArtifactType/ScanReport"/>
+      <genEnumLiterals ecoreEnumLiteral="risk.ecore#//ArtifactType/Document"/>
+    </genEnums>
+    <genClasses ecoreClass="risk.ecore#//RiskModelElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//RiskModelElement/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//RiskModelElement/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//RiskModelElement/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//RiskModelElement/uri"/>
+    </genClasses>
+    <genClasses ecoreClass="risk.ecore#//RiskLevel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//RiskLevel/score"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//RiskLevel/color"/>
+    </genClasses>
+    <genClasses ecoreClass="risk.ecore#//ControlCategory"/>
+    <genClasses ecoreClass="risk.ecore#//RiskCategory">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference risk.ecore#//RiskCategory/subCategories"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference risk.ecore#//RiskCategory/risks"/>
+    </genClasses>
+    <genClasses ecoreClass="risk.ecore#//Risk">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//Risk/triggers"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//Risk/consequences"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//Risk/regulatoryReferences"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference risk.ecore#//Risk/relatedRisks"/>
+    </genClasses>
+    <genClasses ecoreClass="risk.ecore#//Control">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference risk.ecore#//Control/category"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//Control/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//Control/effectiveness"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//Control/automated"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//Control/owner"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//Control/reviewDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//Control/evidenceUrl"/>
+    </genClasses>
+    <genClasses ecoreClass="risk.ecore#//QuestionOption">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//QuestionOption/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//QuestionOption/score"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference risk.ecore#//QuestionOption/riskLevel"/>
+    </genClasses>
+    <genClasses ecoreClass="risk.ecore#//Question">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//Question/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//Question/required"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//Question/category"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//Question/guidance"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//Question/weight"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference risk.ecore#//Question/riskCategory"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference risk.ecore#//Question/options"/>
+    </genClasses>
+    <genClasses ecoreClass="risk.ecore#//Questionnaire">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//Questionnaire/version"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//Questionnaire/applicability"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference risk.ecore#//Questionnaire/questions"/>
+    </genClasses>
+    <genClasses ecoreClass="risk.ecore#//Answer">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference risk.ecore#//Answer/question"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//Answer/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//Answer/score"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//Answer/notes"/>
+    </genClasses>
+    <genClasses ecoreClass="risk.ecore#//QuestionnaireResponse">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference risk.ecore#//QuestionnaireResponse/questionnaire"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//QuestionnaireResponse/responseDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//QuestionnaireResponse/respondent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference risk.ecore#//QuestionnaireResponse/answers"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//QuestionnaireResponse/totalScore"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference risk.ecore#//QuestionnaireResponse/level"/>
+    </genClasses>
+    <genClasses ecoreClass="risk.ecore#//ScoreComponent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//ScoreComponent/score"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//ScoreComponent/weight"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference risk.ecore#//ScoreComponent/level"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//ScoreComponent/source"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//ScoreComponent/notes"/>
+    </genClasses>
+    <genClasses ecoreClass="risk.ecore#//Finding">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference risk.ecore#//Finding/severity"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//Finding/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//Finding/status"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//Finding/dueDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//Finding/assignee"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//Finding/ticketUrl"/>
+    </genClasses>
+    <genClasses ecoreClass="risk.ecore#//TreatmentAction">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//TreatmentAction/assignee"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//TreatmentAction/dueDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//TreatmentAction/status"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//TreatmentAction/ticketUrl"/>
+    </genClasses>
+    <genClasses ecoreClass="risk.ecore#//RiskTreatment">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//RiskTreatment/strategy"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//RiskTreatment/targetDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//RiskTreatment/status"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//RiskTreatment/approver"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference risk.ecore#//RiskTreatment/actions"/>
+    </genClasses>
+    <genClasses ecoreClass="risk.ecore#//IdentifiedRisk">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference risk.ecore#//IdentifiedRisk/risk"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference risk.ecore#//IdentifiedRisk/likelihood"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference risk.ecore#//IdentifiedRisk/impact"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//IdentifiedRisk/inherentScore"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//IdentifiedRisk/residualScore"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference risk.ecore#//IdentifiedRisk/residualLevel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//IdentifiedRisk/status"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//IdentifiedRisk/owner"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//IdentifiedRisk/dueDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//IdentifiedRisk/notes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference risk.ecore#//IdentifiedRisk/treatment"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference risk.ecore#//IdentifiedRisk/controls"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference risk.ecore#//IdentifiedRisk/findings"/>
+    </genClasses>
+    <genClasses ecoreClass="risk.ecore#//RiskAssessment">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//RiskAssessment/assessmentDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//RiskAssessment/assessor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//RiskAssessment/approver"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//RiskAssessment/reviewDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//RiskAssessment/nextReviewDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//RiskAssessment/status"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference risk.ecore#//RiskAssessment/trigger"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference risk.ecore#//RiskAssessment/scores"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//RiskAssessment/compositeScore"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference risk.ecore#//RiskAssessment/consolidatedRating"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference risk.ecore#//RiskAssessment/findings"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference risk.ecore#//RiskAssessment/questionnaireResponses"/>
+    </genClasses>
+    <genClasses ecoreClass="risk.ecore#//KeyValuePair">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//KeyValuePair/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//KeyValuePair/value"/>
+    </genClasses>
+    <genClasses ecoreClass="risk.ecore#//Artifact">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//Artifact/externalId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//Artifact/artifactUrl"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//Artifact/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//Artifact/lastUpdated"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference risk.ecore#//Artifact/metadata"/>
+    </genClasses>
+    <genClasses ecoreClass="risk.ecore#//DataSource">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//DataSource/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//DataSource/baseUrl"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference risk.ecore#//DataSource/artifacts"/>
+    </genClasses>
+    <genClasses ecoreClass="risk.ecore#//ChangeEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//ChangeEvent/eventDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//ChangeEvent/type"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference risk.ecore#//ChangeEvent/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference risk.ecore#//ChangeEvent/artifact"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//ChangeEvent/details"/>
+    </genClasses>
+    <genClasses ecoreClass="risk.ecore#//RiskAssessableUnit">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//RiskAssessableUnit/dataClassification"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//RiskAssessableUnit/owner"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference risk.ecore#//RiskAssessableUnit/components"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference risk.ecore#//RiskAssessableUnit/identifiedRisks"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference risk.ecore#//RiskAssessableUnit/controls"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference risk.ecore#//RiskAssessableUnit/questionnaires"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference risk.ecore#//RiskAssessableUnit/questionnaireResponses"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference risk.ecore#//RiskAssessableUnit/assessments"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference risk.ecore#//RiskAssessableUnit/artifacts"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference risk.ecore#//RiskAssessableUnit/changeEvents"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference risk.ecore#//RiskAssessableUnit/currentRating"/>
+    </genClasses>
+    <genClasses ecoreClass="risk.ecore#//Product">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//Product/productType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//Product/businessLine"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//Product/developmentTeam"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//Product/technologyStack"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//Product/usesPublicCloud"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//Product/usesAI"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//Product/regulatoryScope"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//Product/onboardingDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//Product/productionDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//Product/reviewCycleDays"/>
+    </genClasses>
+    <genClasses ecoreClass="risk.ecore#//ProductComponent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//ProductComponent/componentType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//ProductComponent/version"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//ProductComponent/environment"/>
+    </genClasses>
+    <genClasses ecoreClass="risk.ecore#//RiskRegister">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference risk.ecore#//RiskRegister/entries"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute risk.ecore#//RiskRegister/reportDate"/>
+    </genClasses>
+    <genClasses ecoreClass="risk.ecore#//RiskRegisterEntry">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference risk.ecore#//RiskRegisterEntry/riskAssessableUnit"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference risk.ecore#//RiskRegisterEntry/identifiedRisk"/>
+    </genClasses>
+    <genClasses ecoreClass="risk.ecore#//RiskNamespace">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference risk.ecore#//RiskNamespace/riskLevels"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference risk.ecore#//RiskNamespace/controlCategories"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference risk.ecore#//RiskNamespace/riskCategories"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference risk.ecore#//RiskNamespace/questionnaires"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference risk.ecore#//RiskNamespace/dataSources"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference risk.ecore#//RiskNamespace/products"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference risk.ecore#//RiskNamespace/riskRegisters"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
