@@ -10,7 +10,7 @@
 	</parent>
 	<artifactId>model</artifactId>
 	<packaging>jar</packaging>
-	<name>Ecore Trading Model</name>
+	<name>Ecore Risk Model</name>
 	<build>
 		<plugins>
 			<plugin>

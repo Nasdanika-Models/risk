@@ -84,7 +84,7 @@ public class EcoreGenRiskProcessorsFactory {
 				try {
 					Document document = Document.create(false, null);
 					Page page = document.createPage();
-					page.setName("Telemetry");
+					page.setName("Risk");
 					
 					Model model = page.getModel();
 					Root root = model.getRoot();

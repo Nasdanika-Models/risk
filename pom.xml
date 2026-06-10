@@ -7,7 +7,7 @@
 	<packaging>pom</packaging>
 	<name>Risk model, processors, doc generator</name>
 	<description>Risk model for risk assessments</description>
-	<url>https://travel.models.nasdanika.org/</url>
+	<url>https://risk.models.nasdanika.org/</url>
 
 	<licenses>
 		<license>
